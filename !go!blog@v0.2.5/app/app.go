@@ -2,11 +2,10 @@ package app
 
 import (
 	"fmt"
-	"github.com/fuxiaohei/GoBlog/app/handler"
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoBlog/app/plugin"
-	"github.com/fuxiaohei/GoBlog/app/utils"
-	"github.com/fuxiaohei/GoInk"
+	"goblog/app/handler"
+	"goblog/app/model"
+	"goblog/app/plugin"
+	"goblog/app/utils"
 	"net/http"
 	"os"
 	"os/signal"
@@ -15,6 +14,8 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 var (
@@ -138,7 +139,7 @@ func catchExit() {
 	}
 }
 
-// Init starts Fxh.Go application preparation.
+// Init starts huBlog.Go application preparation.
 // Load models and plugins, update views.
 func Init() {
 
@@ -186,7 +187,7 @@ func registerHomeHandler() {
 	App.Get("/", handler.Home)
 }
 
-// Run begins Fxh.Go http server.
+// Run begins huBlog.Go http server.
 func Run() {
 
 	registerAdminHandler()

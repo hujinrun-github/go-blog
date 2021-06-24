@@ -2,8 +2,9 @@ package plugin
 
 import (
 	"fmt"
-	"github.com/fuxiaohei/GoInk"
 	"time"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 type HelloPlugin struct {

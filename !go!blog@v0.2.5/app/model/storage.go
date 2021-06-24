@@ -2,11 +2,12 @@ package model
 
 import (
 	"encoding/json"
-	"github.com/fuxiaohei/GoBlog/app/utils"
 	"io/ioutil"
 	"os"
 	"path"
 	"strconv"
+
+	"goblog/app/utils"
 )
 
 var (
@@ -85,10 +86,10 @@ func writeDefaultData() {
 	// write contents
 	a := new(Content)
 	a.Id = Storage.TimeInc(9)
-	a.Title = "欢迎使用 Fxh.Go"
+	a.Title = "欢迎使用 huBlog.Go"
 	a.Slug = "welcome-fxh-go"
 	a.Text = "如果您看到这篇文章,表示您的 blog 已经安装成功."
-	a.Tags = []string{"Fxh.Go"}
+	a.Tags = []string{"huBlog.Go"}
 	a.CreateTime = utils.Now()
 	a.EditTime = a.CreateTime
 	a.UpdateTime = a.CreateTime
@@ -105,7 +106,7 @@ func writeDefaultData() {
 	co.Author = u.Nick
 	co.Email = u.Email
 	co.Url = u.Url
-	co.Content = "欢迎加入使用 Fxh.Go"
+	co.Content = "欢迎加入使用 huBlog.Go"
 	co.Avatar = utils.Gravatar(co.Email, "50")
 	co.Pid = 0
 	co.Ip = "127.0.0.1"
@@ -123,7 +124,7 @@ func writeDefaultData() {
 	p.Id = a.Id + Storage.TimeInc(6)
 	p.Title = "关于"
 	p.Slug = "about-me"
-	p.Text = "本页面由 Fxh.Go 创建, 这只是个测试页面."
+	p.Text = "本页面由 huBlog.Go 创建, 这只是个测试页面."
 	p.Tags = []string{}
 	p.CreateTime = utils.Now()
 	p.EditTime = p.CreateTime
@@ -142,7 +143,7 @@ func writeDefaultData() {
 	p2.Id = p.Id + Storage.TimeInc(6)
 	p2.Title = "好友"
 	p2.Slug = "friends"
-	p2.Text = "本页面由 Fxh.Go 创建, 这只是个测试页面."
+	p2.Text = "本页面由 huBlog.Go 创建, 这只是个测试页面."
 	p2.Tags = []string{}
 	p2.CreateTime = utils.Now()
 	p2.EditTime = p2.CreateTime
@@ -163,16 +164,16 @@ func writeDefaultData() {
 
 	// write version
 	v := new(version)
-	v.Name = "Fxh.Go"
+	v.Name = "huBlog.Go"
 	v.BuildTime = utils.Now()
 	v.Version = appVersion
 	Storage.Set("version", v)
 
 	// write settings
 	s := map[string]string{
-		"site_title":         "Fxh.Go",
+		"site_title":         "huBlog.Go",
 		"site_sub_title":     "Go开发的简单博客",
-		"site_keywords":      "Fxh.Go,Golang,Blog",
+		"site_keywords":      "huBlog.Go,Golang,Blog",
 		"site_description":   "Go语言开发的简单博客程序",
 		"site_url":           "http://localhost/",
 		"article_size":       "4",

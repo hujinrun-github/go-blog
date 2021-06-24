@@ -1,14 +1,15 @@
 package handler
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoInk"
+	"goblog/app/model"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"path"
 	"strconv"
 	"strings"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 func AdminFiles(context *GoInk.Context) {
@@ -67,4 +68,28 @@ func FileUpload(context *GoInk.Context) {
 	model.CreateFile(ff)
 	Json(context, true).Set("file", ff).End()
 	context.Do("attach_created", ff)
+}
+
+// BlogFileUpload 上传博客的接口
+func BlogFileUpload(context *GoInk.Context) {
+	var req *http.Request
+	req = context.Request
+	req.ParseMultipartForm(32 << 20)
+	f, _, e := req.FormFile("file")
+	if e != nil {
+		Json(context, false).Set("msg", e.Error()).End()
+		return
+	}
+	data, _ := ioutil.ReadAll(f)
+	maxSize := context.App().Config().Int("app.upload_size")
+	defer func() {
+		f.Close()
+		data = nil
+	}()
+	if len(data) >= maxSize {
+		Json(context, false).Set("msg", "文件应小于10M").End()
+		return
+	}
+
+	Json(context, true).Set("blog", string(data)).End()
 }

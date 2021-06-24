@@ -1,12 +1,13 @@
 package handler
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoBlog/app/plugin"
-	"github.com/fuxiaohei/GoBlog/app/utils"
-	"github.com/fuxiaohei/GoInk"
+	"goblog/app/model"
+	"goblog/app/plugin"
+	"goblog/app/utils"
 	"strconv"
 	"strings"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 func Admin(context *GoInk.Context) {

@@ -1,9 +1,8 @@
 package app
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/cmd"
-	"github.com/fuxiaohei/GoBlog/app/handler"
-	_ "github.com/fuxiaohei/GoBlog/app/upgrade"
+	"goblog/app/cmd"
+	"goblog/app/handler"
 	"os"
 )
 
