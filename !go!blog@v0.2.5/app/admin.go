@@ -1,6 +1,8 @@
 package app
 
-import "github.com/fuxiaohei/GoBlog/app/handler"
+import (
+	"goblog/app/handler"
+)
 
 func registerAdminHandler() {
 	// add admin handlers
@@ -26,7 +28,7 @@ func registerAdminHandler() {
 
 	App.Route("GET,DELETE", "/admin/files/", handler.Auth, handler.AdminFiles)
 	App.Post("/admin/files/upload/", handler.Auth, handler.FileUpload)
-
+	App.Post("/admin/files/uploadBlog/", handler.Auth, handler.BlogFileUpload)
 	App.Route("GET,POST", "/admin/plugins/", handler.Auth, handler.AdminPlugin)
 	App.Route("GET,POST", "/admin/plugins/:plugin_key/", handler.Auth, handler.PluginSetting)
 

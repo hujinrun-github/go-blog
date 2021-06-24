@@ -1,7 +1,8 @@
 package plugin
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/model"
+	"goblog/app/model"
+
 	"github.com/fuxiaohei/GoInk"
 )
 

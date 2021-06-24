@@ -2,7 +2,8 @@ package model
 
 import (
 	"errors"
-	"github.com/fuxiaohei/GoBlog/app/utils"
+
+	"goblog/app/utils"
 )
 
 var (
@@ -10,18 +11,19 @@ var (
 	userMaxId int
 )
 
+// User 用户信息
 type User struct {
-	Id            int
-	Name          string
-	Password      string
-	Nick          string
-	Email         string
-	Avatar        string
-	Url           string
-	Bio           string
-	CreateTime    int64
-	LastLoginTime int64
-	Role          string
+	Id            int    `json:"id"`
+	Name          string `json:"name"`
+	Password      string `json:"password"`
+	Nick          string `json:"nick"`
+	Email         string `json:"email"`
+	Avatar        string `json:"avatar"`
+	Url           string `json:"url"`
+	Bio           string `json:"bio"`
+	CreateTime    int64  `json:"createTime"`
+	LastLoginTime int64  `json:"lastLoginTime"`
+	Role          string `json:"role"`
 }
 
 // check user password.
@@ -45,7 +47,7 @@ func (u *User) ChangePassword(pwd string) {
 	u.Password = utils.Sha1(pwd + "xxxxx")
 }
 
-// get a user by given id.
+// GetUserById get a user by given id.
 func GetUserById(id int) *User {
 	for _, u := range users {
 		if u.Id == id {
@@ -125,4 +127,10 @@ func LoadUsers() {
 			userMaxId = u.Id
 		}
 	}
+}
+
+// 定义专门用于mysql的接口
+// GetUserByIdFromMySql 从MySql数据库中获取一个用户
+func GetUserByIdFromMySql(id int) *User {
+	return nil
 }

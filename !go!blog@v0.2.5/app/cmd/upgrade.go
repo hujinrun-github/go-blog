@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoInk"
+	"goblog/app/model"
 	"sort"
 	"strconv"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 var upgradeScript map[int]func(app *GoInk.App) bool

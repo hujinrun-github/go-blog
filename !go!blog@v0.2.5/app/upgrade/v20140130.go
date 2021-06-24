@@ -1,9 +1,9 @@
 package upgrade
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/cmd"
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoBlog/app/plugin"
+	"goblogapp/cmd"
+	"goblogapp/model"
+	"goblogapp/plugin"
 	"github.com/fuxiaohei/GoInk"
 	"os"
 	"path"

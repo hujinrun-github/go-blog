@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/utils"
+	"goblog/app/utils"
 	"html/template"
 	"sort"
 	"strings"

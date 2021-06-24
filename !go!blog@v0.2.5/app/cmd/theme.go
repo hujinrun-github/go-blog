@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/model"
-	"github.com/fuxiaohei/GoInk"
+	"goblog/app/model"
 	"io/ioutil"
 	"path/filepath"
+
+	"github.com/fuxiaohei/GoInk"
 )
 
 var adminTheme = "admin"

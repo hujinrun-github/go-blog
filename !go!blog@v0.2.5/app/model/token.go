@@ -2,7 +2,8 @@ package model
 
 import (
 	"fmt"
-	"github.com/fuxiaohei/GoBlog/app/utils"
+	"goblog/app/utils"
+
 	"github.com/fuxiaohei/GoInk"
 )
 

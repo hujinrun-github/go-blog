@@ -1,22 +1,22 @@
 function initUpload(p) {
-    $('#attach-show').on("click", function () {
+    $('#attach-show').on("click", function() {
         $('#attach-upload').trigger("click");
     });
-    $('#attach-upload').on("change", function () {
+    $('#attach-upload').on("change", function() {
         if (confirm("立即上传?")) {
             var bar = $('<p class="file-progress inline-block">0%</p>');
             $('#attach-form').ajaxSubmit({
-                "beforeSubmit": function () {
+                "beforeSubmit": function() {
                     $(p).before(bar);
                 },
-                "uploadProgress": function (event, position, total, percentComplete) {
+                "uploadProgress": function(event, position, total, percentComplete) {
                     var percentVal = percentComplete + '%';
                     bar.css("width", percentVal).html(percentVal);
                 },
-                "success": function (json) {
+                "success": function(json) {
                     if (!json.res) {
                         bar.html(json.msg).addClass("err");
-                        setTimeout(function () {
+                        setTimeout(function() {
                             bar.remove();
                         }, 5000);
                     } else {
@@ -27,6 +27,23 @@ function initUpload(p) {
             });
         } else {
             $(this).val("");
+        }
+    });
+}
+
+function initUploadBlog(edit) {
+    $('#file-upload').on("click", function() {
+        $('#attach-upload-blog').trigger("click");
+    });
+    $('#attach-upload-blog').on("change", function() {
+        if (confirm("立即上传?")) {
+            $('#attach-form-blog').ajaxSubmit({
+                "success": function(json) {
+                    if (json.res) {
+                        edit.setValue(json.blog);
+                    }
+                }
+            });
         }
     });
 }

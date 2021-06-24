@@ -1,1 +1,1 @@
-[{"Id":5,"Name":"admin","Password":"3ca5b3f88f47fdfd0b2f8dfcb5769b17d848591a","Nick":"管理员","Email":"admin@example.com","Avatar":"","Url":"http://example.com/","Bio":"这是站点的管理员，你可以添加一些个人介绍，支持换行不支持markdown","CreateTime":1621586454,"LastLoginTime":1621586454,"Role":"ADMIN"}]
+[{"id":5,"name":"admin","password":"3ca5b3f88f47fdfd0b2f8dfcb5769b17d848591a","nick":"管理员","email":"admin@example.com","avatar":"","url":"http://example.com/","bio":"这是站点的管理员，你可以添加一些个人介绍，支持换行不支持markdown","createTime":1621586454,"lastLoginTime":1621586454,"role":"ADMIN"}]

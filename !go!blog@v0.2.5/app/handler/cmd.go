@@ -1,8 +1,9 @@
 package handler
 
 import (
-	"github.com/fuxiaohei/GoBlog/app/cmd"
-	"github.com/fuxiaohei/GoBlog/app/model"
+	"goblog/app/cmd"
+	"goblog/app/model"
+
 	"github.com/fuxiaohei/GoInk"
 )
 
